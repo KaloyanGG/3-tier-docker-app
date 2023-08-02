@@ -1,0 +1,4 @@
+The apt-get command is specific to Debian-based Linux distributions like Ubuntu.
+If you are using a different base image that uses a different package manager 
+(e.g., yum for CentOS, dnf for Fedora, apk for Alpine), you need to use the 
+corresponding package manager instead of apt-get.

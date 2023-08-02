@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+
+  node:
+    container_name: back-end
+    image: back-end
+    build:
+      context: ./back-end
+    ports:
+      - "4000:5000"
+    networks:
+      - my-network
+      
+  front-end:
+    container_name: front-end
+    image: front-end
+    build:
+      context: ./front-end
+    ports:
+      - "4050:80"
+    networks:
+      - my-network
+    volumes:
+      - C:\Projects\Docker\first-3-tier-docker-try\front-end:/usr/share/nginx/html
+
+networks:
+  my-network:
+    driver: bridge
