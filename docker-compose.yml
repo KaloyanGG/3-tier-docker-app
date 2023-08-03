@@ -11,6 +11,16 @@ services:
       - "4000:5000"
     networks:
       - my-network
+    volumes:
+      - C:\Projects\Docker\first-3-tier-docker-try\back-end:/var/www
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: db
+    image: mongo
+    networks:
+      - my-network
       
   front-end:
     container_name: front-end
@@ -23,6 +33,8 @@ services:
       - my-network
     volumes:
       - C:\Projects\Docker\first-3-tier-docker-try\front-end:/usr/share/nginx/html
+    depends_on:
+      - node
 
 networks:
   my-network:

@@ -1,8 +1,9 @@
 const resultBox = document.querySelector('#result');
 let textToOutput = '';
 
-setInterval(async () => {
 
+
+setInterval(async () => {
 
     try {
         //! Does not work:
@@ -26,5 +27,5 @@ setInterval(async () => {
     resultBox.textContent = textToOutput + '\n' + new Date().toLocaleTimeString();
 
 
-}, 1000);
+}, 5000);
 

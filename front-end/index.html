@@ -16,6 +16,39 @@
         <div id="result">
             --for now nothing--
         </div>
+        <br /><br>
+
+        <div id="kittens">
+
+            <p id="kittens-paragraph">
+                --no kittens for now--
+            </p>
+            <script>
+                async function seedKittens() {
+                    const response = await fetch('http://localhost:4000/kittens', {
+                        method: 'POST',
+                    });
+                    const kittens = await response.json();
+                    console.log(kittens);
+                }
+                async function refreshKittens() {
+                    const response = await fetch('http://localhost:4000/kittens');
+                    const kittens = await response.json();
+
+                    const kittensParagraph = document.getElementById('kittens-paragraph');
+                    kittensParagraph.innerHTML = JSON.stringify(kittens);
+
+                    console.log(kittens);
+                }
+            </script>
+            <button onclick="seedKittens()">
+                Seed kittens
+            </button>
+            <button onclick="refreshKittens()">
+                Refresh kittens
+            </button>
+        </div>
+
     </div>
 </body>
 

@@ -1,19 +1,17 @@
 {
-  "name": "back-end",
+  "name": "db",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "connect.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node connect.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
     "mongoose": "^7.4.1"
   }
 }
